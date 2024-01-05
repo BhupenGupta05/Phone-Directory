@@ -15,7 +15,7 @@ const App = () => {
 
   const [persons,setPersons] = useState([])
   const[filter,setFilter] = useState('')
-  const[mssg,setMssg] = useState('something...')
+  const[mssg,setMssg] = useState(null)
 
 
   const addNewContact = (newContact) => {

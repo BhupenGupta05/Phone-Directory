@@ -51,11 +51,11 @@ const AddContact = ({persons,setPersons,addContact, setMssg}) => {
     } else {
       const confirmation = 
       window.confirm(`${existingContact.name} is already added to the directory, do you wish to replace the old number with the new one ?`)
-      console.log(confirmation);
+      console.log(confirmation)
 
       if(confirmation) {
         const updatedContact = {...existingContact, number: contact.number}
-        console.log(updatedContact);
+        console.log(updatedContact)
 
 
         //UPDATING AN EXISTING CONTACT
@@ -63,11 +63,9 @@ const AddContact = ({persons,setPersons,addContact, setMssg}) => {
         .update(updatedContact.id,updatedContact)
         .then(updatedObj => {
           //updating existing contact on the id we found by using '==='
-          setPersons((prevPersons) => prevPersons.map((dataItem) => {
-            console.log(typeof dataItem.id);
-            console.log(typeof existingContact.id);
+          setPersons(prevPersons => prevPersons.map(dataItem => 
             dataItem.id === existingContact.id ? updatedObj : dataItem
-          })) 
+          )) 
 
           setMssg(`${updatedObj.name} has been updated`);
           setTimeout(() => {
