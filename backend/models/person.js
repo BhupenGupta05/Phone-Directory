@@ -1,7 +1,6 @@
-import { config } from 'dotenv'
+const { config } = require('dotenv')
 config()
-
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', false)
 
@@ -31,4 +30,4 @@ personSchema.set('toJSON', {
 
 const Person = mongoose.model('Person', personSchema)
 
-export default Person
+module.exports = Person

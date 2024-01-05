@@ -1,10 +1,11 @@
-import { config } from 'dotenv'
+const { config } = require('dotenv');
 config()
-import Person from './models/person.js'
-import express from 'express'
+const express = require('express');
 const app = express()
-import cors from 'cors'
-import morgan from 'morgan'
+const cors = require('cors');
+const morgan = require('morgan');
+const Person = require('./models/person');
+
 
 //REQUEST LOGGER
 const requestLogger = (request, response, next) => {
